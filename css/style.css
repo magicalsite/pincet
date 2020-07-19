@@ -1245,13 +1245,17 @@ body {
 }
 
 .client-card__help {
-  width: 3.854vw;
-  height: 3.854vw;
+  max-width: 2.135vw;
   position: absolute;
-  top: 42%;
-  left: 37%;
+  top: 44%;
+  left: 38%;
   z-index: 10;
   cursor: pointer;
+  border-radius: 50%;
+}
+
+.client-card__help img {
+  border-radius: 50%;
 }
 
 .client-card__help > svg {
@@ -1316,6 +1320,55 @@ body {
 .client-card__help-hover:hover .client-card__help-text {
   visibility: visible;
   opacity: 1;
+}
+
+.client-card__help:after {
+  content: "";
+  border: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  -webkit-animation: pulse 1s linear infinite;
+          animation: pulse 1s linear infinite;
+  opacity: 0;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0;
+  }
 }
 
 .main-modal {
